@@ -29,7 +29,6 @@ public class CategorieProduitController {
 	@ResponseBody
 	public CategorieProduit retrieveCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
 		return categorieProduitService.retrieveCategorieProduit(categorieProduitId);
-//changed 
 	}
 
 	// http://localhost:8089/SpringMVC/categorieProduit/add-categorieProduit
