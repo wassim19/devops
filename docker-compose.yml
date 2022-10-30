@@ -15,7 +15,7 @@ services:
 
 
   spring_app:
-    image: wassim/achat
+    image: wassim19/achat
     container_name: achatspring
     restart: on-failure
     environment:
@@ -26,7 +26,7 @@ services:
      - mysqldb
 
   angular_app:
-    image: wassim/achatfront:1.0
+    image: wassim19/achatfront:1.0
     container_name: achatangular
     restart: on-failure
     ports:
