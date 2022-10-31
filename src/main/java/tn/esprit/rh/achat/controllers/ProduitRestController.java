@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Produit;
+import tn.esprit.rh.achat.entities.ProduitDTO;
 import tn.esprit.rh.achat.services.IProduitService;
 
 import java.util.List;
@@ -32,7 +33,8 @@ public class ProduitRestController {
 
 	@PostMapping("/add-produit")
 	@ResponseBody
-	public Produit addProduit(@RequestBody Produit p) {
+	public Produit addProduit(@RequestBody ProduitDTO pr) {
+		Produit p = new Produit();
 		return produitService.addProduit(p);
 	}
 
@@ -44,7 +46,8 @@ public class ProduitRestController {
 
 	@PutMapping("/modify-produit")
 	@ResponseBody
-	public Produit modifyProduit(@RequestBody Produit p) {
+	public Produit modifyProduit(@RequestBody ProduitDTO pr) {
+		Produit p = new Produit();
 		return produitService.updateProduit(p);
 	}
 

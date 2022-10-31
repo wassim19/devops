@@ -5,6 +5,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Stock;
+import tn.esprit.rh.achat.entities.StockDTO;
 import tn.esprit.rh.achat.services.IStockService;
 
 import java.util.List;
@@ -33,7 +34,8 @@ public class StockRestController {
 
 	@PostMapping("/add-stock")
 	@ResponseBody
-	public Stock addStock(@RequestBody Stock s) {
+	public Stock addStock(@RequestBody StockDTO stock) {
+		Stock s = new Stock();
 		return stockService.addStock(s);
 	}
 
@@ -45,8 +47,9 @@ public class StockRestController {
 
 	@PutMapping("/modify-stock")
 	@ResponseBody
-	public Stock modifyStock(@RequestBody Stock stock) {
-		return stockService.updateStock(stock);
+	public Stock modifyStock(@RequestBody StockDTO stock) {
+		Stock s = new Stock();
+		return stockService.updateStock(s);
 	}
 
 

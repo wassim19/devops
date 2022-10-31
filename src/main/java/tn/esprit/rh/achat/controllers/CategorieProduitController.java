@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.CategorieProduit;
+import tn.esprit.rh.achat.entities.CategorieProduitDTO;
 import tn.esprit.rh.achat.services.ICategorieProduitService;
 
 import java.util.List;
@@ -27,11 +28,12 @@ public class CategorieProduitController {
 	public CategorieProduit retrieveCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
 		return categorieProduitService.retrieveCategorieProduit(categorieProduitId);
 	}
-
+	
 	@PostMapping("/add-categorieProduit")
 	@ResponseBody
-	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduit cp) {
-		return categorieProduitService.addCategorieProduit(cp);
+	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduitDTO cp) {
+		CategorieProduit c = new CategorieProduit();
+		return categorieProduitService.addCategorieProduit(c);
 	}
 
 	@DeleteMapping("/remove-categorieProduit/{categorieProduit-id}")
@@ -42,8 +44,9 @@ public class CategorieProduitController {
 
 	@PutMapping("/modify-categorieProduit")
 	@ResponseBody
-	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
-		return categorieProduitService.updateCategorieProduit(categorieProduit);
+	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduitDTO categorieProduit) {
+		CategorieProduit c = new CategorieProduit();
+		return categorieProduitService.updateCategorieProduit(c);
 	}
 
 	

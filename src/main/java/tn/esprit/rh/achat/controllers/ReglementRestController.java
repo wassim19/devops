@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Reglement;
+import tn.esprit.rh.achat.entities.ReglementDTO;
 import tn.esprit.rh.achat.services.IReglementService;
 
 import java.util.Date;
@@ -22,7 +23,8 @@ public class ReglementRestController {
 
     @PostMapping("/add-reglement")
     @ResponseBody
-    public Reglement addReglement(@RequestBody Reglement r) {
+    public Reglement addReglement(@RequestBody ReglementDTO re) {
+        Reglement r = new Reglement();
         return reglementService.addReglement(r);
     }
     @GetMapping("/retrieve-all-reglements")

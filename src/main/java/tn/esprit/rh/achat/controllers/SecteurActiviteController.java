@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.SecteurActivite;
+import tn.esprit.rh.achat.entities.SecteurActiviteDTO;
 import tn.esprit.rh.achat.services.ISecteurActiviteService;
 
 import java.util.List;
@@ -31,8 +32,9 @@ public class SecteurActiviteController {
 
 	@PostMapping("/add-secteurActivite")
 	@ResponseBody
-	public SecteurActivite addSecteurActivite(@RequestBody SecteurActivite sa) {
-		return secteurActiviteService.addSecteurActivite(sa);
+	public SecteurActivite addSecteurActivite(@RequestBody SecteurActiviteDTO sa) {
+		SecteurActivite s = new SecteurActivite();
+		return secteurActiviteService.addSecteurActivite(s);
 	}
     @DeleteMapping("/remove-secteurActivite/{secteurActivite-id}")
 	@ResponseBody
@@ -42,8 +44,9 @@ public class SecteurActiviteController {
 
 	@PutMapping("/modify-secteurActivite")
 	@ResponseBody
-	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
-		return secteurActiviteService.updateSecteurActivite(secteurActivite);
+	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActiviteDTO secteurActivite) {
+		SecteurActivite s = new SecteurActivite();
+		return secteurActiviteService.updateSecteurActivite(s);
 	}
 
 	
