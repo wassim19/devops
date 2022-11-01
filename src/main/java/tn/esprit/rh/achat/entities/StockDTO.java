@@ -29,6 +29,9 @@ public class StockDTO implements Serializable {
 	private String libelleStock;
 	private Integer qte;
 	private Integer qteMin;
+	/**
+	 * 
+	 */
 	@OneToMany(mappedBy = "stock")
 	@JsonIgnore
 	private Set<Produit> produits;
