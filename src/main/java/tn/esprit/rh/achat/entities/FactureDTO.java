@@ -34,21 +34,23 @@ public class FactureDTO implements Serializable {
 	/**
 	 * 
 	 */
-	private float montantFacture;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreationFacture;
+	private float montantFacture;
+	
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModificationFacture;
+	@ManyToOne
+    @JsonIgnore
+    private Fournisseur fournisseur;
 	private Boolean archivee;
 	@OneToMany(mappedBy = "facture")
 	private Set<DetailFacture> detailsFacture;
-    @ManyToOne
-    @JsonIgnore
-    private Fournisseur fournisseur;
+    private float montantRemise;
     @OneToMany(mappedBy="facture")
     @JsonIgnore
     private Set<Reglement> reglements;
-	private float montantRemise;
+	
 
 	
 }

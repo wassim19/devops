@@ -37,18 +37,19 @@ public class FournisseurDTO implements Serializable {
 	/**
 	 * 
 	 */
-	private String libelle;
 	@Enumerated(EnumType.STRING)
 	private CategorieFournisseur  categorieFournisseur;
-	@OneToMany(mappedBy="fournisseur")
-	@JsonIgnore
-	private Set<Facture> factures;
+	private String libelle;
     @ManyToMany
     @JsonIgnore
     private Set<SecteurActivite> secteurActivites;
+	@OneToMany(mappedBy="fournisseur")
+	@JsonIgnore
+	private Set<Facture> factures;
+	private String code;
     @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
     private DetailFournisseur detailFournisseur;
-	private String code;
+	
     
 
 	

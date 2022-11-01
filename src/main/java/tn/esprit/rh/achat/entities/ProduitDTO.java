@@ -35,22 +35,23 @@ public class ProduitDTO implements Serializable {
 	/**
 	 * 
 	 */
-	private float prix;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
+	private float prix;
 	private String libelleProduit;
-	@Temporal(TemporalType.DATE)
-	private Date dateDerniereModification;
 	@ManyToOne
 	@JsonIgnore
 	private Stock stock;
-	@OneToMany(mappedBy = "produit")
-	@JsonIgnore
-	private Set<DetailFacture> detailFacture;
+	@Temporal(TemporalType.DATE)
+	private Date dateDerniereModification;
+	private String codeProduit;	
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
-	private String codeProduit;
+	@OneToMany(mappedBy = "produit")
+	@JsonIgnore
+	private Set<DetailFacture> detailFacture;
+	
 	
 
 
