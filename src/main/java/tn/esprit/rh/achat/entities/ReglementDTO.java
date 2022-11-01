@@ -19,6 +19,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReglementDTO implements Serializable{
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id

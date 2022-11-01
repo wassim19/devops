@@ -23,6 +23,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FournisseurDTO implements Serializable {
+	/**
+	 * 
+	 */
 
 	private static final long serialVersionUID = 1L;
 
