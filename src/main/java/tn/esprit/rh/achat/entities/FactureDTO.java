@@ -29,7 +29,11 @@ public class FactureDTO implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFacture;
-	private float montantRemise;
+	
+	
+	/**
+	 * 
+	 */
 	private float montantFacture;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreationFacture;
@@ -44,6 +48,7 @@ public class FactureDTO implements Serializable {
     @OneToMany(mappedBy="facture")
     @JsonIgnore
     private Set<Reglement> reglements;
+	private float montantRemise;
 
 	
 }

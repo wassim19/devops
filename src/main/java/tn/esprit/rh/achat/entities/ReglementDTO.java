@@ -27,13 +27,18 @@ public class ReglementDTO implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idReglement;
-	private float montantPaye;
-	private float montantRestant;
+	
+	
+	
+	/**
+	 * 
+	 */
 	private Boolean payee;
 	@Temporal(TemporalType.DATE)
 	private Date dateReglement;
+	private float montantRestant;
 	@ManyToOne
 	@JsonIgnore
 	private Facture facture;
-	
+	private float montantPaye;
 }

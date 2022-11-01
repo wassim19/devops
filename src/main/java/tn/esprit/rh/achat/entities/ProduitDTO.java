@@ -29,11 +29,16 @@ public class ProduitDTO implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProduit;
-	private String codeProduit;
-	private String libelleProduit;
+	
+	
+	
+	/**
+	 * 
+	 */
 	private float prix;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
+	private String libelleProduit;
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModification;
 	@ManyToOne
@@ -45,6 +50,7 @@ public class ProduitDTO implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
+	private String codeProduit;
 	
 
 
