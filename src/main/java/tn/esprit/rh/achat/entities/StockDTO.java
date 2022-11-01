@@ -26,15 +26,18 @@ public class StockDTO implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idStock;
-	private String libelleStock;
 	private Integer qte;
-	private Integer qteMin;
+	
+	
+	
 	/**
 	 * 
 	 */
+	private String libelleStock;
 	@OneToMany(mappedBy = "stock")
 	@JsonIgnore
 	private Set<Produit> produits;
+	private Integer qteMin;
 	public StockDTO(String libelleStock, Integer qte, Integer qteMin) {
 		super();
 		this.libelleStock = libelleStock;
