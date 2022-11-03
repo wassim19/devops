@@ -1,4 +1,4 @@
-// package tn.esprit.rh.achat;
+// package tn.esprit.rh.achat.Services;
 
 // import static org.junit.Assert.assertEquals;
 // import static org.junit.Assert.assertNotNull;
@@ -81,18 +81,6 @@
 // 		Stock updatedStock=iStockService.updateStock(s);
 // 		assertEquals(s.getLibelleStock(),updatedStock.getLibelleStock());
 // 	}
-	
-// 	@Order(5)
-// 	@Test
-// 	public void retrieveStock()
-// 	{
-// 		log.info("it works !!");
-// 	}
-
-
-	
-	
-
 	
 	
 
