@@ -76,7 +76,10 @@ public class FournisseurServiceImpl implements IFournisseurService {
 	public void assignSecteurActiviteToFournisseur(Long idSecteurActivite, Long idFournisseur) {
 		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);
 		SecteurActivite secteurActivite = secteurActiviteRepository.findById(idSecteurActivite).orElse(null);
-        fournisseur.getSecteurActivites().add(secteurActivite);
+        if (null == fournisseur) {
+			throw new IllegalStateException("fournisseur is null");
+		  }
+		fournisseur.getSecteurActivites().add(secteurActivite);
         fournisseurRepository.save(fournisseur);
 		
 		
