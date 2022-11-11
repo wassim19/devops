@@ -14,7 +14,7 @@ services:
       - db:/var/lib/mysql
 
   spring_app:
-    image: wassim19/achat
+    image: houssem999/achat
     container_name: achatspring
     restart: on-failure
     environment:
