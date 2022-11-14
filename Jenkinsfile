@@ -21,33 +21,33 @@ pipeline {
                 // sh "mvn test"
             }
         }
-        stage('Sonarqube') {
-            steps {
-                sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=Wassim19"
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-                // bat '.\\mvnw test'
-            }
-        }
-        stage('Deployment') {
-            steps {
-                sh 'mvn deploy -Dmaven.test.skip=true'
-            }
-        }
-        stage('Build Docker image') {
-            steps {//sh 'echo image_exist'
-                     sh 'docker build -t wassim19/achat .'
-            }
-        }
-        stage('Push to Docker hub') {
-            steps {//sh 'echo image_pushed'
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
-                sh 'docker push wassim19/achat'
-                }
-        }
+        // stage('Sonarqube') {
+        //     steps {
+        //         sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=Wassim19"
+        //     }
+        // }
+        // stage('Test') {
+        //     steps {
+        //         sh 'mvn test'
+        //         // bat '.\\mvnw test'
+        //     }
+        // }
+        // stage('Deployment') {
+        //     steps {
+        //         sh 'mvn deploy -Dmaven.test.skip=true'
+        //     }
+        // }
+        // stage('Build Docker image') {
+        //     steps {//sh 'echo image_exist'
+        //              sh 'docker build -t wassim19/achat .'
+        //     }
+        // }
+        // stage('Push to Docker hub') {
+        //     steps {//sh 'echo image_pushed'
+        //         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
+        //         sh 'docker push wassim19/achat'
+        //         }
+        // }
         stage('Run Docker-compose') {
             steps {
                    	sh 'docker-compose up -d'
