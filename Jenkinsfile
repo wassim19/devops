@@ -48,11 +48,11 @@ pipeline {
         //         sh 'docker push wassim19/achat'
         //         }
         // }
-        stage('Run Docker-compose') {
-            steps {
-                   	sh 'docker-compose up -d'
-            	}
-        }
+        // stage('Run Docker-compose') {
+        //     steps {
+        //            	sh 'docker-compose up -d'
+        //     	}
+        // }
     }
 post {
        always {
