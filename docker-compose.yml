@@ -3,7 +3,7 @@ version: "3"
 services:
   mysqldb:
     image: mysql
-    container_name: mysqldb
+    container_name: mysql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
       MYSQL_DATABASE: achatdb 
