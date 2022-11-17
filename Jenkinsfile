@@ -26,12 +26,12 @@ pipeline {
         //         sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=Wassim19"
         //     }
         // }
-        // stage('Test') {
-        //     steps {
-        //         sh 'mvn test'
-        //         // bat '.\\mvnw test'
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+                // bat '.\\mvnw test'
+            }
+        }
         // stage('Deployment') {
         //     steps {
         //         sh 'mvn deploy -Dmaven.test.skip=true'
