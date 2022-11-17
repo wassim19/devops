@@ -13,7 +13,7 @@ services:
      - projectdevops
     
   spring_app:
-    image: wassim19/achat
+    image: alaadhaouadi/achat
     container_name: achatspring
     ports:
      - 8089:8089
