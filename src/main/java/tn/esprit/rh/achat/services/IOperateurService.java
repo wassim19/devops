@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface IOperateurService {
 
-	List<Operateur> retrieveAllOperateurs();
+    List<Operateur> retrieveAllOperateurs();
 
-	Operateur addOperateur(Operateur o);
+    Operateur addOperateur(Operateur o);
 
-	void deleteOperateur(Long id);
+    void deleteOperateur(Long id);
 
-	Operateur updateOperateur(Operateur o);
+    Operateur updateOperateur(Operateur o);
 
-	Operateur retrieveOperateur(Long id);
+    Operateur retrieveOperateur(Long id);
 
 }

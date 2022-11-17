@@ -6,18 +6,18 @@ import java.util.Date;
 import java.util.List;
 
 public interface IFactureService {
-	List<Facture> retrieveAllFactures();
+    List<Facture> retrieveAllFactures();
 
-	List<Facture> getFacturesByFournisseur(Long idFournisseur);
+    List<Facture> getFacturesByFournisseur(Long idFournisseur);
 
-	Facture addFacture(Facture f);
+    Facture addFacture(Facture f);
 
-	void cancelFacture(Long id);
+    void cancelFacture(Long id);
 
-	Facture retrieveFacture(Long id);
-	
-	void assignOperateurToFacture(Long idOperateur, Long idFacture);
+    Facture retrieveFacture(Long id);
 
-	float pourcentageRecouvrement(Date startDate, Date endDate);
+    void assignOperateurToFacture(Long idOperateur, Long idFacture);
+
+    float pourcentageRecouvrement(Date startDate, Date endDate);
 
 }

@@ -10,35 +10,36 @@ import java.util.List;
 @Service
 public class OperateurServiceImpl implements IOperateurService {
 
-	@Autowired
-	OperateurRepository operateurRepository;
-	@Override
-	public List<Operateur> retrieveAllOperateurs() {
-		return (List<Operateur>) operateurRepository.findAll();
-	}
+    @Autowired
+    OperateurRepository operateurRepository;
 
-	@Override
-	public Operateur addOperateur(Operateur o) {
-		operateurRepository.save(o);
-		return o;
-	}
+    @Override
+    public List<Operateur> retrieveAllOperateurs() {
+        return (List<Operateur>) operateurRepository.findAll();
+    }
 
-	@Override
-	public void deleteOperateur(Long id) {
-		operateurRepository.deleteById(id);
-		
-	}
+    @Override
+    public Operateur addOperateur(Operateur o) {
+        operateurRepository.save(o);
+        return o;
+    }
 
-	@Override
-	public Operateur updateOperateur(Operateur o) {
-		operateurRepository.save(o);
-		return o;
-	}
+    @Override
+    public void deleteOperateur(Long id) {
+        operateurRepository.deleteById(id);
 
-	@Override
-	public Operateur retrieveOperateur(Long id) {
-		Operateur operateur = operateurRepository.findById(id).orElse(null);
-		return operateur;
-	}
+    }
+
+    @Override
+    public Operateur updateOperateur(Operateur o) {
+        operateurRepository.save(o);
+        return o;
+    }
+
+    @Override
+    public Operateur retrieveOperateur(Long id) {
+        Operateur operateur = operateurRepository.findById(id).orElse(null);
+        return operateur;
+    }
 
 }

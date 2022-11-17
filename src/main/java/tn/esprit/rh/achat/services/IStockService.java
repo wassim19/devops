@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface IStockService {
 
-	List<Stock> retrieveAllStocks();
+    List<Stock> retrieveAllStocks();
 
-	Stock addStock(Stock s);
+    Stock addStock(Stock s);
 
-	void deleteStock(Long id);
+    void deleteStock(Long id);
 
-	Stock updateStock(Stock u);
+    Stock updateStock(Stock u);
 
-	Stock retrieveStock(Long id);
+    Stock retrieveStock(Long id);
 
-	String retrieveStatusStock();
+    String retrieveStatusStock();
 }
