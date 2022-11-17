@@ -18,39 +18,35 @@ pipeline {
 //             }
 //         }
 //
-//         stage('Build') {
-//             steps {
-//                 echo 'Building...'
-//                sh 'mvn clean package  -DskipTests=true'
-//                archiveArtifacts "target/achat-1.0.jar"
-//             }
-//         }
-//
-//
-// 		stage ("Launching unit tests"){
-// 			steps{
-// 			    echo 'Testing..'
-// 				sh "mvn test"
-// 			}
-// 			post{
-// 			    always{
-// 			         junit '**/target/surefire-reports/TEST-*.xml'
-// 			    }
-// 			}
-//
-//
-//         stage('Sonarqube') {
-//             steps {
-//                 sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=123456"
-//             }
-//         }
-//
-//         stage ("Deployement"){
-// 			steps{
-// 			    echo 'Deploying to Nexus'
-// 				sh 'mvn clean package -Dmaven.test.skip=true deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.0.5:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
-// 			}
-// 		}
+        stage('Build') {
+            steps {
+                echo 'Building...'
+               sh 'mvn clean package  -DskipTests=true'
+               archiveArtifacts "target/achat-1.0.jar"
+            }
+        }
+
+
+		stage ("Launching unit tests"){
+			steps{
+			    echo 'Testing..'
+				sh "mvn test"
+			}
+			}
+
+
+        stage('Sonarqube') {
+            steps {
+                sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=123456"
+            }
+        }
+
+        stage ("Deployement"){
+			steps{
+			    echo 'Deploying to Nexus'
+				sh 'mvn clean package -Dmaven.test.skip=true deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.0.5:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
+			}
+		}
 
 // 		stage('Building Docker Image'){
 // 			  steps {
@@ -64,12 +60,12 @@ pipeline {
 //                 sh 'docker push ousskh63/achat:2.0'
 //                 }
 // 	//	}
-		stage('Run Docker-compose') {
-                steps {
-                  	sh "docker-compose up -d"
-                  	echo "wassim"
-            	}
-        }
+// 		stage('Run Docker-compose') {
+//                 steps {
+//                   	sh "docker-compose up -d"
+//
+//             	}
+//         }
 
 
    }
